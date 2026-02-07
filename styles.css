@@ -1,0 +1,236 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #ff1744 0%, #ff5252 50%, #ff6e40 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Question Section */
+.question-section {
+    text-align: center;
+    z-index: 10;
+    animation: fadeIn 0.8s ease-in;
+}
+
+.main-question {
+    font-size: 3.5rem;
+    color: #fff;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-weight: bold;
+}
+
+.button-container {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.btn {
+    padding: 1rem 2.5rem;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-yes {
+    background-color: #ff1744;
+    color: white;
+}
+
+.btn-yes:hover {
+    background-color: #e01336;
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(255, 23, 68, 0.4);
+}
+
+.btn-no {
+    background-color: #fff;
+    color: #ff1744;
+}
+
+.btn-no:hover {
+    background-color: #ffebee;
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(255, 23, 68, 0.2);
+}
+
+.spin-cat {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+.btn-yes {
+    position: relative;
+    z-index: 19;
+}
+
+/* Try Again Section */
+.try-again {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+    z-index: 20;
+    animation: popIn 0.5s ease;
+}
+
+/* Celebration Section */
+.celebration {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 15;
+}
+
+.strobe {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: 16;
+    animation: strobe 0.2s infinite;
+}
+
+.flashing-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 5rem;
+    font-weight: bold;
+    color: #ff1744;
+    text-shadow: 0 0 20px #ff1744, 0 0 40px #ff5252;
+    z-index: 17;
+    animation: flash 0.3s infinite;
+}
+
+#confetti {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 18;
+}
+
+.celebration-cat {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50vh;
+    z-index: 19;
+    object-fit: cover;
+}
+
+@keyframes popIn {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.5);
+    }
+    50% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes strobe {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.8;
+    }
+}
+
+@keyframes flash {
+    0%, 100% {
+        opacity: 1;
+        text-shadow: 0 0 20px #ff1744, 0 0 40px #ff5252;
+    }
+    50% {
+        opacity: 0.3;
+        text-shadow: 0 0 10px #ff1744;
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .main-question {
+        font-size: 2rem;
+    }
+
+    .btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 1.2rem;
+        min-height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .button-container {
+        gap: 1rem;
+    }
+
+    .try-again {
+        font-size: 2.5rem;
+    }
+
+    .flashing-text {
+        font-size: 3rem;
+    }
+}

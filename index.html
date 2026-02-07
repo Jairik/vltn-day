@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine?</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="question-section">
+            <h1 class="main-question">Will you be my valentine?</h1>
+            <div class="button-container">
+                <button id="yesBtn" class="btn btn-yes">
+                    <span id="yesBtnText">Yes</span>
+                    <img id="spinCat" src="spinCat.gif" alt="spinning cat" class="spin-cat hidden">
+                </button>
+                <button id="noBtn" class="btn btn-no">No</button>
+            </div>
+        </div>
+
+        <div id="tryAgain" class="try-again hidden">
+            <p>try again</p>
+        </div>
+
+        <div id="celebration" class="celebration hidden">
+            <div class="strobe"></div>
+            <div class="flashing-text">lets goooo</div>
+            <img id="celebrationCat" src="spinCat.gif" alt="spinning cat celebration" class="celebration-cat">
+            <canvas id="confetti"></canvas>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
